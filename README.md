@@ -29,11 +29,45 @@ Un script de shell para realizar ataques de fuerza bruta por diccionario contra 
     ./su-brute.sh [OPCIONES] USUARIO DICCIONARIO
     ```
 
-**Ejemplo:**
-```bash
-# Ataque básico al usuario 'root' con el diccionario 'rockyou.txt'
-./su-brute.sh root rockyou.txt
-```
+### Argumentos
+
+- **`USUARIO`**: El nombre del usuario objetivo en el sistema.
+- **`DICCIONARIO`**: La ruta al archivo de diccionario que se utilizará para el ataque.
+
+### Opciones
+
+| Opción           | Alias       | Descripción                                               |
+| ---------------- | ----------- | --------------------------------------------------------- |
+| `-v`, `--verbose`  |             | Activa el modo verbose, mostrando cada intento de contraseña. |
+| `-d`, `--delay`    | `<segundos>` | Establece el tiempo de espera (en segundos) entre cada intento. |
+| `-h`, `--help`     |             | Muestra el menú de ayuda.                                 |
+
+### Ejemplos:
+
+- **Ataque básico:**
+
+  ```bash
+  ./su-brute.sh root rockyou.txt
+  ```
+
+- **Ataque en modo verbose:**
+
+  ```bash
+  ./su-brute.sh -v root rockyou.txt
+  ```
+
+- **Ataque con un delay de 0.5 segundos entre intentos:**
+
+  ```bash
+  ./su-brute.sh -d 0.5 root rockyou.txt
+  ```
+  
+- **Ataque en modo verbose con un delay de 0.5 segundos entre intentos:**
+
+  ```bash
+  ./su-brute.sh -v -d 0.5 root rockyou.txt
+  ```
+  
 
 ## Salida esperada
 
